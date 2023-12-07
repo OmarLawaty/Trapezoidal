@@ -17,20 +17,20 @@ int main()
 {
   string func = "";
 
-  int n = 0;
-  float a, b, h, sum = 0, I = 0, err;
+  long long n = 1, max_n = 999999;
+  float a = 0, b = 0, h = 0, I = 0, sum = 0, err;
 
-  cout << "Enter the interval: ";
-  cin >> n;
-
-  if (n > 999999 || n < 1)
+  do
   {
-    do
-    {
-      cout << "You can't enter a number bigger than 999999. The interval can't be less than 1.\nEnter the interval: ";
-      cin >> n;
-    } while (n > 999999 || n < 1);
-  }
+    if (n <= 0)
+      cout << "The interval can't be less than 1." << endl;
+
+    if (n > 999999)
+      cout << "You can't exced 9223372036854775807." << endl;
+
+    cout << "Enter the interval: ";
+    cin >> n;
+  } while (n > 999999 || n <= 0);
 
   cout << "Enter the lower limit: ";
   cin >> a;
